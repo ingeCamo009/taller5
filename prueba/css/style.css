@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #5c8211;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar {
+  width: 100%;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weekdays, .days {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weekdays div, .days div {
+  width: 14.28%;
+  text-align: center;
+  margin: 2px 0;
+}
+
+.days div {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.days div:hover {
+  background-color: #e4e4e7;
+}
+
+.add-event, .delete-event-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-event-btn {
+  background-color: #ff4d4d;
+}
+
+.add-event:hover, .delete-event-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-event-btn:hover {
+  background-color: #e60000;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body {
+  margin-top: 10px;
+}
+
+.modal-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.add-event-input {
+  margin-bottom: 10px;
+}
+
+.close {
+  cursor: pointer;
+}
+
+/* Show modal */
+.modal.show, .modal-overlay.show {
+  display: block;
+}
+/* Estilo para el día actual */
+.days .today {
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+}
+
+/* Estilo para el día seleccionado */
+.days .selected {
+  background-color: #ffeb3b;
+  color: #000;
+  border-radius: 50%;
+}
